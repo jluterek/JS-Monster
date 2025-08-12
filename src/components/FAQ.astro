@@ -1,0 +1,134 @@
+---
+const faqs = [
+  {
+    question: 'Does JavaScript have an official mascot or logo?',
+    answer:
+      'No, JavaScript does not have an official mascot or logo. Any logos or mascots you see are unofficial, created by the community. The JS Monster is just one example of an unofficial mascot, made to capture the playful, powerful nature of JavaScript.',
+  },
+  {
+    question: 'What is the JS Monster?',
+    answer:
+      "The JS Monster is an unofficial mascot for JavaScript—a fun, yellow, furry creature designed by the community. It's inspired by the idea of giving JavaScript a memorable character, but it's just one of many possible mascots that people might create.",
+  },
+  {
+    question: 'Why does JavaScript need an unofficial mascot?',
+    answer:
+      "Mascots help give programming languages personality and community spirit (like Go's Gopher or Rust's Ferris). Since JavaScript has no official mascot, community mascots like the JS Monster help make the language more fun and relatable. But anyone can create their own mascot!",
+  },
+  {
+    question: 'Can I use the JS Monster mascot in my projects?',
+    answer:
+      'Yes! The JS Monster is a community creation. You are welcome to use it in presentations, fan art, stickers, or JavaScript-related projects. We encourage everyone to create, remix, and share their own mascots too!',
+  },
+  {
+    question: 'Is the JS Monster the same as the JavaScript logo?',
+    answer:
+      "No. There is no official JavaScript logo—any logos you see are unofficial, just like the JS Monster is an unofficial mascot. The JS Monster is a character inspired by JavaScript, but it's not the only possible mascot or symbol.",
+  },
+  {
+    question: 'Who created the JS Monster mascot?',
+    answer:
+      "The JS Monster was created by James Luterek as a fun, memorable mascot. It started with a single 'JS Eats the World' image and grew into a series of monster designs. But anyone can create their own mascot for JavaScript!",
+  },
+  {
+    question: 'Why is it called the JS Monster?',
+    answer:
+      "The name 'JS Monster' is a playful way to show how JavaScript has become a 'beast' in the programming world—it's everywhere, from browsers to servers, mobile apps to AI. The monster idea captures both JavaScript's power and its fun side.",
+  },
+  {
+    question: 'Is this the only JavaScript mascot?',
+    answer:
+      'No there are many that have popped up, from stuffed rhinos to other creative designs. If you are inspired, you should make your own.',
+  },
+  {
+    question: 'What makes a good programming language mascot?',
+    answer:
+      "A great mascot should be memorable, represent the language's spirit, and be something the community can embrace and remix. The JS Monster is just one example—what matters most is that the mascot brings people together and makes coding more fun.",
+  },
+];
+
+// Schema.org FAQPage structured data
+const faqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: faq.answer,
+    },
+  })),
+};
+---
+
+<section id="faq" class="py-20 px-4 relative z-10">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl md:text-6xl font-bold text-white mb-4">
+        Frequently Asked <span class="text-yellow-400">Questions</span>
+      </h2>
+      <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+        Everything you wanted to know about the unofficial JavaScript mascot and the JS Monster.
+      </p>
+    </div>
+
+    <div class="space-y-6">
+      {
+        faqs.map((faq) => (
+          <details class="group bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden hover:border-yellow-400/30 transition-all duration-300">
+            <summary class="px-6 py-4 cursor-pointer flex items-center justify-between hover:bg-zinc-900/70 transition-colors duration-300">
+              <h3 class="text-lg font-semibold text-white pr-4 group-open:text-yellow-400 transition-colors duration-300">
+                {faq.question}
+              </h3>
+              <div class="flex-shrink-0 w-6 h-6 rounded-full bg-yellow-400/10 flex items-center justify-center group-open:bg-yellow-400/20 transition-all duration-300">
+                <svg
+                  class="w-4 h-4 text-yellow-400 transform transition-transform duration-300 group-open:rotate-180"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </div>
+            </summary>
+            <div class="px-6 pb-4">
+              <p class="text-gray-400 leading-relaxed">{faq.answer}</p>
+            </div>
+          </details>
+        ))
+      }
+    </div>
+
+    <div
+      class="mt-12 p-8 bg-gradient-to-r from-yellow-400/10 via-yellow-400/5 to-yellow-400/10 rounded-xl border border-yellow-400/20"
+    >
+      <h3 class="text-xl font-bold text-white mb-3">Have More Questions?</h3>
+      <p class="text-gray-400 mb-4">
+        Join the JS Monster community and help shape the future of JavaScript's unofficial mascot!
+      </p>
+      <a
+        href="https://github.com/jluterek/JS-Monster/discussions"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="inline-flex items-center gap-2 px-4 py-2 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-500 transition-colors duration-300"
+      >
+        Join the Discussion
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+
+  <script type="application/ld+json" set:html={JSON.stringify(faqSchema)} />
+</section>

@@ -1,0 +1,26 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Gallery from '../components/Gallery.astro';
+import About from '../components/About.astro';
+import FeaturedPosts from '../components/FeaturedPosts.astro';
+import FAQ from '../components/FAQ.astro';
+import Footer from '../components/Footer.astro';
+
+const description =
+  "JS Monster - The unofficial JavaScript mascot. A fun, yellow, furry creature representing JavaScript's dominance in web development. Does JavaScript have a mascot? Meet the JS Monster!";
+const title = 'JS Monster - Unofficial JavaScript Mascot';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main>
+    <Hero />
+    <Gallery />
+    <About />
+    <FeaturedPosts />
+    <FAQ />
+  </main>
+  <Footer />
+</Layout>

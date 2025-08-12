@@ -1,0 +1,108 @@
+{
+  "monsters": [
+    {
+      "id": "sleepy-snuggler",
+      "file": "JS Monster1.png",
+      "title": "Sleepy Snuggler",
+      "description": "Adorable puffball with droopy eyes ready for cozy nap",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "happy-helper",
+      "file": "JS Monster2.png",
+      "title": "Happy Helper",
+      "description": "Bright-eyed fuzzy friend spreading positive coding vibes",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "worried-wobbler",
+      "file": "JS Monster3.png",
+      "title": "Worried Wobbler",
+      "description": "Anxious creature with sad eyes, probably debugging tricky code",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "love-bug",
+      "file": "JS Monster4.png",
+      "title": "Love Bug",
+      "description": "Blushing romantic monster spreading JavaScript affection everywhere",
+      "featured": true,
+      "category": "emotions"
+    },
+    {
+      "id": "laughing-legend",
+      "file": "JS Monster5.png",
+      "title": "Laughing Legend",
+      "description": "Hysterically happy creature cracking up at coding jokes",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "grumpy-grump",
+      "file": "JS Monster6.png",
+      "title": "Grumpy Grump",
+      "description": "Scowling furball having a bad programming day",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "playful-prankster",
+      "file": "JS Monster7.png",
+      "title": "Playful Prankster",
+      "description": "Mischievous one-eyed monster pulling silly coding stunts",
+      "featured": false,
+      "category": "emotions"
+    },
+    {
+      "id": "puzzled-programmer",
+      "file": "JS Monster8.png",
+      "title": "Puzzled Programmer",
+      "description": "Confused creature pondering complex JavaScript problems",
+      "featured": true,
+      "category": "emotions"
+    },
+    {
+      "id": "golden-gremlin",
+      "file": "js-monster.png",
+      "title": "Golden Gremlin",
+      "description": "Fuzzy yellow monster with purple googly eyes and big black mouth",
+      "featured": true,
+      "category": "original"
+    },
+    {
+      "id": "furry-fighter",
+      "file": "js-monster-2.png",
+      "title": "Furry Fighter",
+      "description": "Spiky creature with wild hair grabbing onto giant JS letters",
+      "featured": true,
+      "category": "original"
+    },
+    {
+      "id": "coding-companion",
+      "file": "js-monster-laptop.png",
+      "title": "Coding Companion",
+      "description": "Fluffy developer hunched over laptop, deep in JavaScript flow",
+      "featured": true,
+      "category": "working"
+    },
+    {
+      "id": "world-chomper",
+      "file": "js-eats-world.png",
+      "title": "World Chomper",
+      "description": "Giant JS monster taking massive bite out of planet Earth",
+      "featured": true,
+      "category": "special"
+    },
+    {
+      "id": "space-explorer",
+      "file": "js-monster-in-space.png",
+      "title": "Space Explorer",
+      "description": "Cheerful astronaut monster floating through the cosmic void",
+      "featured": false,
+      "category": "special"
+    }
+  ]
+}

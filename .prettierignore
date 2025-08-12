@@ -1,0 +1,23 @@
+# Build outputs
+dist/
+.astro/
+
+# Dependencies
+node_modules/
+
+# Package manager files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Environment
+.env
+.env.*
+
+# Temporary files
+*.log
+.tmp/
+.cache/
+
+# Generated files
+public/monster-faces/

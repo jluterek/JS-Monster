@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Gallery from '../components/Gallery.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="JavaScript Mascot Gallery - All JS Monster Designs"
+  description="Complete collection of JS Monster designs - the unofficial JavaScript mascot. Explore all variations of the JS mascot representing different developer moods and moments."
+>
+  <Header />
+  <main>
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+          Complete <span class="text-yellow-400">Monster Collection</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          Browse the entire JS Monster family. Each unique design represents different moods,
+          moments, and experiences in the JavaScript developer journey.
+        </p>
+      </div>
+    </div>
+    <Gallery showAll={true} />
+  </main>
+  <Footer />
+</Layout>

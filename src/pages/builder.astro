@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import MonsterBuilder from '../components/MonsterBuilder.astro';
+import Footer from '../components/Footer.astro';
+
+const title = 'JS Monster Builder - Create Your Own JavaScript Mascot';
+const description =
+  'Design your own custom JS Monster! Choose colors, expressions, accessories and more to create a unique JavaScript mascot.';
+---
+
+<Layout title={title} description={description}>
+  <Header />
+  <main class="min-h-screen relative z-10">
+    <div class="max-w-7xl mx-auto px-4 py-12">
+      <div class="text-center mb-8">
+        <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">
+          JS Monster <span class="text-yellow-400">Builder</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-2xl mx-auto">
+          Create your own custom JS Monster! Mix and match colors, expressions, and accessories to
+          design a unique JavaScript mascot.
+        </p>
+      </div>
+      <MonsterBuilder />
+    </div>
+  </main>
+  <Footer />
+</Layout>

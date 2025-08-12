@@ -1,0 +1,8 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-yellow-200: #f3df49;
+  --color-yellow-300: #f3df49;
+  --color-yellow-400: #f3df49;
+  --color-yellow-500: #f3df49;
+}

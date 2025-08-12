@@ -1,0 +1,167 @@
+---
+const monsterImages = [
+  'JS Monster1.png',
+  'JS Monster2.png',
+  'JS Monster3.png',
+  'JS Monster4.png',
+  'JS Monster5.png',
+  'JS Monster6.png',
+  'JS Monster7.png',
+  'JS Monster8.png',
+];
+
+const randomMonster = monsterImages[Math.floor(Math.random() * monsterImages.length)];
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden px-4 py-20">
+  <div class="absolute inset-0">
+    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-yellow-400/5 to-transparent">
+    </div>
+    <div class="js-particles absolute inset-0"></div>
+    <div class="grid-background absolute inset-0"></div>
+  </div>
+
+  <div class="relative z-10 max-w-6xl mx-auto text-center">
+    <div class="mb-8">
+      <img
+        src={`/images/${randomMonster}`}
+        alt="JS Monster - The JavaScript Beast"
+        class="w-64 h-64 md:w-80 md:h-80 mx-auto rounded-2xl shadow-2xl animate-float object-cover border-2 border-yellow-400/20"
+      />
+    </div>
+
+    <h1 class="text-5xl md:text-7xl font-bold text-white mb-6">
+      The Unofficial <span class="text-yellow-400 font-black">JavaScript Mascot</span>
+    </h1>
+
+    <p class="text-xl md:text-2xl text-gray-400 mb-8 max-w-3xl mx-auto leading-relaxed">
+      Meet the JS Monster - the unofficial JS mascot that represents JavaScript's
+      <span class="text-yellow-400 font-semibold">total domination</span> of the development world.
+    </p>
+
+    <div class="flex flex-wrap gap-4 justify-center mb-12">
+      <a
+        href="/builder"
+        class="px-8 py-4 bg-yellow-400 text-black font-bold rounded-lg hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-400/20"
+      >
+        Build Your Monster
+      </a>
+      <a
+        href="/gallery"
+        class="px-8 py-4 bg-zinc-900 text-white font-bold rounded-lg hover:bg-zinc-800 transform hover:scale-105 transition-all duration-300 border border-zinc-800"
+      >
+        See All Monsters
+      </a>
+      <a
+        href="#about"
+        class="px-8 py-4 bg-zinc-900 text-white font-bold rounded-lg hover:bg-zinc-800 transform hover:scale-105 transition-all duration-300 border border-zinc-800"
+      >
+        Learn More
+      </a>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-3 gap-4 max-w-4xl mx-auto mt-16">
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">🗄️</div>
+        <h3 class="font-mono text-yellow-400 font-bold">MongoDB</h3>
+        <p class="text-gray-500 text-sm mt-1">JSON Database</p>
+      </div>
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">🖥️</div>
+        <h3 class="font-mono text-yellow-400 font-bold">NodeJS</h3>
+        <p class="text-gray-500 text-sm mt-1">Server Runtime</p>
+      </div>
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">⚛️</div>
+        <h3 class="font-mono text-yellow-400 font-bold">React</h3>
+        <p class="text-gray-500 text-sm mt-1">Frontend Framework</p>
+      </div>
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">📱</div>
+        <h3 class="font-mono text-yellow-400 font-bold">React Native</h3>
+        <p class="text-gray-500 text-sm mt-1">Mobile Apps</p>
+      </div>
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">💻</div>
+        <h3 class="font-mono text-yellow-400 font-bold">Electron</h3>
+        <p class="text-gray-500 text-sm mt-1">Desktop Apps</p>
+      </div>
+      <div
+        class="bg-zinc-900/50 border border-zinc-800 rounded-xl p-6 transform hover:scale-105 transition-all duration-300 hover:border-yellow-400/30"
+      >
+        <div class="text-3xl mb-2">🤖</div>
+        <h3 class="font-mono text-yellow-400 font-bold">TensorFlowJS</h3>
+        <p class="text-gray-500 text-sm mt-1">Machine Learning</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+    <svg class="w-6 h-6 text-gray-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+    </svg>
+  </div>
+</section>
+
+<style>
+  .grid-background {
+    background-image:
+      linear-gradient(rgba(243, 223, 73, 0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(243, 223, 73, 0.03) 1px, transparent 1px);
+    background-size: 50px 50px;
+    opacity: 0.5;
+  }
+
+  .js-particles::before {
+    content: 'JS';
+    position: absolute;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    font-size: 2rem;
+    color: rgba(243, 223, 73, 0.05);
+    animation: float-particle 15s infinite linear;
+    top: 10%;
+    left: 10%;
+  }
+
+  .js-particles::after {
+    content: '{ }';
+    position: absolute;
+    font-family: 'Space Mono', monospace;
+    font-weight: bold;
+    font-size: 3rem;
+    color: rgba(243, 223, 73, 0.05);
+    animation: float-particle 20s infinite linear reverse;
+    bottom: 20%;
+    right: 15%;
+  }
+
+  @keyframes float-particle {
+    0% {
+      transform: translate(0, 0) rotate(0deg);
+    }
+    33% {
+      transform: translate(100px, -100px) rotate(120deg);
+    }
+    66% {
+      transform: translate(-50px, 50px) rotate(240deg);
+    }
+    100% {
+      transform: translate(0, 0) rotate(360deg);
+    }
+  }
+</style>

@@ -1,0 +1,105 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+
+const posts = (await getCollection('blog')).sort(
+  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+);
+
+const formatDate = (date: Date) => {
+  return new Intl.DateTimeFormat('en-US', {
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+  }).format(date);
+};
+
+const getCategoryColor = (category: string) => {
+  const colors: Record<string, string> = {
+    javascript: 'bg-yellow-400/20 text-yellow-400 border-yellow-400/30',
+    'web-development': 'bg-blue-400/20 text-blue-400 border-blue-400/30',
+    tutorials: 'bg-green-400/20 text-green-400 border-green-400/30',
+    news: 'bg-purple-400/20 text-purple-400 border-purple-400/30',
+    opinion: 'bg-red-400/20 text-red-400 border-red-400/30',
+  };
+  return colors[category] || 'bg-gray-400/20 text-gray-400 border-gray-400/30';
+};
+---
+
+<Layout
+  title="Blog"
+  description="JavaScript insights, tutorials, and opinions from the JS Monster community"
+>
+  <Header />
+  <main class="min-h-screen py-12 px-4 relative z-10">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-5xl md:text-7xl font-bold text-white mb-4">
+          The <span class="text-yellow-400">Monster Blog</span>
+        </h1>
+        <p class="text-xl text-gray-400 max-w-3xl mx-auto">
+          JavaScript insights, tutorials, and opinions. Feed your curiosity and let the JS Monster
+          guide you through the ever-evolving world of web development.
+        </p>
+      </div>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        {
+          posts.map((post) => (
+            <article class="group">
+              <a href={`/blog/${post.slug}`} class="block h-full">
+                <div class="bg-zinc-900/50 border border-zinc-800 rounded-xl overflow-hidden h-full flex flex-col transform transition-all duration-300 hover:scale-105 hover:border-yellow-400/30">
+                  {post.data.heroImage && (
+                    <div class="aspect-video bg-black overflow-hidden">
+                      <img
+                        src={post.data.heroImage}
+                        alt={post.data.title}
+                        class="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300"
+                      />
+                    </div>
+                  )}
+                  <div class="p-6 flex-grow flex flex-col">
+                    <div class="flex items-center gap-2 mb-3">
+                      <span
+                        class:list={`text-xs px-2 py-1 rounded-lg border ${getCategoryColor(post.data.category)}`}
+                      >
+                        {post.data.category}
+                      </span>
+                      {post.data.featured && (
+                        <span class="text-xs px-2 py-1 rounded-lg bg-yellow-400/20 text-yellow-400 border border-yellow-400/30">
+                          Featured
+                        </span>
+                      )}
+                    </div>
+                    <h2 class="text-xl font-bold text-white mb-2 group-hover:text-yellow-400 transition-colors duration-300">
+                      {post.data.title}
+                    </h2>
+                    <p class="text-gray-400 text-sm mb-4 flex-grow">{post.data.description}</p>
+                    <div class="flex items-center justify-between text-xs text-gray-500">
+                      <span>{post.data.author}</span>
+                      <time datetime={post.data.pubDate.toISOString()}>
+                        {formatDate(post.data.pubDate)}
+                      </time>
+                    </div>
+                  </div>
+                </div>
+              </a>
+            </article>
+          ))
+        }
+      </div>
+
+      {
+        posts.length === 0 && (
+          <div class="text-center py-20">
+            <div class="text-6xl mb-4">📝</div>
+            <p class="text-xl text-gray-400">No posts yet. The monsters are still writing!</p>
+          </div>
+        )
+      }
+    </div>
+  </main>
+  <Footer />
+</Layout>
